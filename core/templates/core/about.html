@@ -1,0 +1,49 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}About – GLINS{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">About GLINS</h2>
+
+<!-- ===== Mission ===== -->
+<section class="mb-5">
+  <h3><span class="bi bi-bullseye me-1"></span> Mission</h3>
+  <p>
+    The <strong>Global Logistics Intermordal Network Simulation (GLINS)</strong> project
+    delivers high-resolution forecasts of global cargo flows and quantifies the
+    impact of policies on international shipping networks.
+  </p>
+</section>
+
+<!-- ===== Research Domains ===== -->
+<section class="mb-5">
+  <h3><span class="bi bi-layers me-1"></span> Research Domains</h3>
+  <ul class="list-unstyled ps-3">
+    <li class="mb-2"><span class="bi bi-graph-up-arrow text-primary me-1"></span>
+        Trade-flow forecasting and scenario analysis</li>
+    <li class="mb-2"><span class="bi bi-cloud-drizzle text-primary me-1"></span>
+        Environmental regulation &amp; decarbonisation impacts</li>
+    <li><span class="bi bi-diagram-3 text-primary me-1"></span>
+        Optimisation of liner-service networks</li>
+  </ul>
+</section>
+
+<!-- ===== Model Framework ===== -->
+<section class="mb-5 text-center">
+  <h3 class="mb-3">
+    <a href="{% url 'modelhub:overview' %}" class="link-dark text-decoration-none">
+      <span class="bi bi-diagram-2 me-1"></span> Model&nbsp;Framework&nbsp;&raquo;
+    </a>
+  </h3>
+
+  <a href="{% url 'modelhub:overview' %}">
+    <img src="{% static 'core/img/model_structure.png' %}"
+         class="img-fluid rounded shadow mb-2"
+         alt="GLINS framework">
+  </a>
+
+  <p class="small text-muted">
+    <em>Figure 1 – Integration of global maritime and regional hinterland networks.</em>
+  </p>
+</section>
+{% endblock %}

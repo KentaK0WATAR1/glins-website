@@ -1,0 +1,39 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Contact – GLINS{% endblock %}
+
+{% block content %}
+<!-- ===== Contact Section ===== -->
+<section class="text-center">
+
+  <h2 class="fw-bold display-6 mb-3">Get in Touch</h2>
+  <p class="lead mb-4">
+    We welcome collaboration and questions about the GLINS project.
+  </p>
+
+  <!-- メールアドレス -->
+  <p class="mb-5 fs-5">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+         fill="currentColor" class="bi bi-envelope-fill me-2" viewBox="0 0 16 16">
+      <path d="M.05 3.555A2 2 0 0 1 2.003 2h11.994a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555Z"/>
+      <path d="M0 4.697v7.104l5.803-3.713L0 4.697ZM6.761 8.83l-6.52 4.168A2 2 0 0 0 2.003 14h11.994a2 2 0 0 0 1.762-.999l-6.52-4.17L8 9.586l-1.239-.757Z"/>
+      <path d="M16 4.697v7.104l-5.803-3.713L16 4.697Z"/>
+    </svg>
+    <a href="mailto:info@glins.example.org" class="fw-semibold text-decoration-none">
+      info@glins.example.org
+    </a>
+  </p>
+
+  <!-- 所在地（必要に応じて） -->
+  <address class="mb-5 small lh-lg">
+    Shibasaki Laboratory, The University of Tokyo<br>
+    7-3-1 Hongo, Bunkyo-ku, Tokyo&nbsp;113-8656, Japan
+  </address>
+
+  <!-- 戻る -->
+  <a href="{% url 'core:home' %}" class="btn btn-outline-primary">
+    &larr;&nbsp;Back to Home
+  </a>
+</section>
+<!-- ===== /Contact Section ===== -->
+{% endblock %}

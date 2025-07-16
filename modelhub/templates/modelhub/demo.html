@@ -1,0 +1,8 @@
+{% extends "core/base.html" %}
+{% block title %}Model Demo – GLINS{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Demo (Placeholder)</h2>
+<p>This page will host the input form for running the GLINS forecast.</p>
+<a href="{% url 'modelhub:result' %}" class="btn btn-success">Show Dummy Result</a>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}{{ pub.title }} – GLINS{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-10 col-xl-8">
+
+    <!-- ===== Publication Card ===== -->
+    <div class="card shadow-sm border-0">
+      <div class="card-body">
+
+        <!-- タイトル -->
+        <h2 class="card-title mb-3">{{ pub.title }}</h2>
+
+        <!-- メタ情報 -->
+        <ul class="list-inline small text-muted mb-4">
+          <li class="list-inline-item">
+            <span class="badge bg-primary">{{ pub.year }}</span>
+          </li>
+          <li class="list-inline-item">
+            <span class="badge bg-secondary">{{ pub.type }}</span>
+          </li>
+        </ul>
+
+        <!-- 著者 -->
+        <p class="mb-4">
+          <strong>Authors:</strong> {{ pub.authors }}
+        </p>
+
+        <!-- DOI / PDF ボタン -->
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          {% if pub.doi %}
+            <a href="https://doi.org/{{ pub.doi }}" target="_blank"
+               class="btn btn-outline-primary btn-sm">
+              View DOI
+            </a>
+          {% endif %}
+          {% if pub.pdf %}
+            <a href="{{ pub.pdf }}" target="_blank"
+               class="btn btn-outline-success btn-sm">
+              Download PDF
+            </a>
+          {% endif %}
+        </div>
+
+        <!-- 戻る -->
+        <a href="{% url 'publications:list' %}" class="btn btn-link px-0">
+          &larr; Back to list
+        </a>
+
+      </div>
+    </div>
+    <!-- ===== /Publication Card ===== -->
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,118 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Model – GLINS{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">GLINS Model Overview</h2>
+
+<!-- 1. Concept -->
+<section class="mb-5">
+  <h3>What is GLINS?</h3>
+  <p>
+    The <strong>Global Logistics Intermordal Network Simulation (GLINS)</strong> model integrates
+    the worldwide maritime container network with regional hinterland
+    networks (road, rail, barge, etc.) by applying network-analysis techniques
+    commonly used in traffic engineering. It provides end-to-end simulations of
+    intermodal cargo flows under current or future economic and policy scenarios.
+  </p>
+</section>
+
+<!-- n. Call to action -->
+<section class="text-center my-5">       <!-- ← mb-5 → my-5 に変更 -->
+  <a href="{% url 'modelhub:demo' %}" class="btn btn-primary btn-lg">
+    Launch the Interactive Demo
+  </a>
+</section>
+
+<!-- 2. Methodology figure -->
+<section class="mb-5">
+  <h3>Methodology</h3>
+  <img src="{% static 'modelhub/img/model_structure.png' %}"
+       class="img-fluid rounded shadow mb-3"
+       alt="GLINS model structure">
+  <p class="text-muted small">
+    <em>Figure 1 – Overall framework (left) and the maritime network layer (right).</em>
+  </p>
+</section>
+
+<!-- 3. Geographic applications -->
+<section class="mb-5">
+  <h3>Geographic Applications</h3>
+  <p>The model has already been applied to:</p>
+  <ul>
+    <li>Central America (El Salvador and neighbouring countries)</li>
+    <li>Mekong &amp; Southeast Asia (Cambodia, Vietnam, Myanmar)</li>
+    <li>South Asia (India, Sri Lanka, Bangladesh)</li>
+    <li>Central Asia / Caucasus &amp; Eurasia</li>
+    <li>Oceania, Africa, the Arctic route, and Japan</li>
+  </ul>
+  <p>
+    Upcoming studies will expand to East Asia (China and Korea),
+    Eastern Europe (incl. Ukraine) and South America.
+  </p>
+</section>
+
+<!-- 4. Collaboration -->
+<section class="mb-5">
+  <h3>Collaboration &amp; Policy Interface</h3>
+  <p>
+    GLINS outputs are provided to government and international agencies such as
+    JICA, the Ministry of Land, Infrastructure, Transport and Tourism of Japan,
+    and the Asian Development Bank (ADB) for pre-feasibility studies and
+    infrastructure-investment projects.
+    Efficient handling of heterogeneous input data and model calibration with
+    limited observed values are key challenges we continuously address.
+  </p>
+</section>
+
+<!-- 5. Recent extensions -->
+<section class="mb-5">
+  <h3>Recent Extensions</h3>
+  <ul>
+    <li>Endogenous optimisation of carrier service networks</li>
+    <li>Inclusion of air-cargo networks and empty / foldable containers</li>
+    <li>Integrated bulk-cargo module and dry-port representation</li>
+  </ul>
+</section>
+
+<!-- 6. Example outputs -->
+<section class="mb-5">
+  <h3>Selected Model Outputs</h3>
+  <div class="row g-4">
+    <div class="col-md-6">
+      <img src="{% static 'modelhub/img/output_eurasia.png' %}"
+           class="img-fluid rounded" alt="Eurasia container flows">
+      <p class="text-muted small mt-1">
+        <em>Gateway seaports and predicted flows across Eurasia (2013 baseline).</em>
+      </p>
+    </div>
+    <div class="col-md-6">
+      <img src="{% static 'modelhub/img/output_southasia.png' %}"
+           class="img-fluid rounded" alt="South Asia infrastructure scenario">
+      <p class="text-muted small mt-1">
+        <em>Infrastructure-investment scenario for South Asia (2030).</em>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 7. References -->
+<section class="mb-5">
+  <h3>Key References</h3>
+  <ul class="small">
+    <li>Comprehensive book chapter on GLINS methodology (2020, English).</li>
+    <li>Case study: Central America – <em>Maritime Economics &amp; Logistics</em> (IAME Martin Stopford Award, 2014).</li>
+    <li>Case study: Mekong delta – <em>IJLRA</em>, <em>TLOG</em>.</li>
+    <li>Case study: South Asia – <em>AJSL</em>, <em>ATS</em>, JICA reports.</li>
+    <li>Case study: Eurasia – <em>ADBI book</em> (in prep.), Takeuchi Yoshio Logistics Award (2022).</li>
+    <li>Further applications: Africa (<em>TR-IP</em>), Oceania, Arctic route, Japan.</li>
+  </ul>
+</section>
+
+<!-- 8. Call to action -->
+<section class="text-center">
+  <a href="{% url 'modelhub:demo' %}" class="btn btn-primary btn-lg">
+    Launch the Interactive Demo
+  </a>
+</section>
+{% endblock %}

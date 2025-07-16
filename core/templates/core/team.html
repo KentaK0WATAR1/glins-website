@@ -1,0 +1,40 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Team – GLINS{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Our Team</h2>
+
+{# ① row-cols-lg-4 を追加 #}
+<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+
+  <!-- Associate Professor -->
+  <div class="col">
+    <div class="card h-100 text-center">
+      <img src="{% static 'core/img/members/icon.svg' %}"
+           class="card-img-top" alt="Ryuichi Shibasaki">
+      <div class="card-body">
+        <h5 class="card-title mb-1">Ryuichi&nbsp;Shibasaki</h5>
+        <p class="card-text small text-muted mb-0">Associate&nbsp;Professor</p>
+        <p class="card-text small text-muted mb-0">Shibasaki&nbsp;Lab.</p>
+        <p class="card-text small text-muted">The&nbsp;University&nbsp;of&nbsp;Tokyo</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Researcher -->
+  <div class="col">
+    <div class="card h-100 text-center">
+      <img src="{% static 'core/img/members/icon.svg' %}"
+           class="card-img-top" alt="Trang Tran">
+      <div class="card-body">
+        <h5 class="card-title mb-1">Trang&nbsp;Tran</h5>
+        <p class="card-text small text-muted mb-0">Project&nbsp;Researcher</p>
+        <p class="card-text small text-muted mb-0">Shibasaki&nbsp;Lab.</p>
+        <p class="card-text small text-muted">The&nbsp;University&nbsp;of&nbsp;Tokyo</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Login – GLINS{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+  <div class="card shadow-sm w-100" style="max-width:420px;">
+    <div class="card-body p-4">
+
+      <h2 class="text-center mb-4">Member&nbsp;Login</h2>
+
+      <form method="post" novalidate>
+        {% csrf_token %}
+
+        {# --- フィールドループで Bootstrap の .form-control を付与 --- #}
+        {% for field in form %}
+          <div class="mb-3">
+            {{ field.label_tag }}
+            {{ field }}
+            {% if field.errors %}
+              <div class="text-danger small mt-1">
+                {{ field.errors|striptags }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+
+        {# リダイレクト先を保持 #}
+        <input type="hidden" name="next" value="{{ next }}">
+
+        <button class="btn btn-primary w-100">Log&nbsp;in</button>
+      </form>
+
+      <p class="text-center mt-3 small">
+        <a href="{% url 'password_reset' %}">Forgot your password?</a>
+      </p>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

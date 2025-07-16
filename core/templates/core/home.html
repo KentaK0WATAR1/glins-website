@@ -1,0 +1,60 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Home – GLINS{% endblock %}
+
+{% block content %}
+
+<!-- ===== Hero Section ===== -->
+<header class="position-relative overflow-hidden bg-dark text-white rounded-3 mb-5"
+        style="min-height:320px;">
+  <!-- 背景画像 -->
+  <img src="{% static 'core/img/container_ship.jpg' %}"
+       class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover opacity-50"
+       alt="Container terminal backdrop">
+  <!-- オーバーレイ -->
+  <div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient"></div>
+
+  <div class="container position-relative py-5 text-center">
+    <h1 class="display-4 fw-bold">Global Logistics Intermordal<br class="d-none d-lg-block">Network Simulation</h1>
+    <p class="lead mb-4">
+      An open research initiative for forecasting cargo flows<br class="d-none d-md-inline">
+      and evaluating smart maritime policies.
+    </p>
+    <a href="{% url 'modelhub:demo' %}" class="btn btn-primary btn-lg shadow">
+      Run Quick&nbsp;Demo
+    </a>
+  </div>
+</header>
+
+<!-- ===== Latest Updates ===== -->
+<section class="container">
+  <h2 class="mb-4 text-center text-md-start">Latest Updates</h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">sample: GLINS&nbsp;2.0 Scenario Library <span class="badge bg-info">Soon</span></h5>
+          <p class="card-text small">Expanded regional coverage and greener policy packages.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">sample: Paper accepted at IAME&nbsp;2025</h5>
+          <p class="card-text small">“Carrier Network Optimisation inside an Intermodal Model.”</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">sample: Webinar: Decarbonisation Impacts</h5>
+          <p class="card-text small">Live on 12&nbsp;Aug&nbsp;2025 – registration opens next month.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

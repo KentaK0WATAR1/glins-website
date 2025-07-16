@@ -1,0 +1,46 @@
+{% extends "core/base.html" %}
+{% block title %}Publications – GLINS{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Publications</h2>
+
+{# ===== 一覧（カード表示）===== #}
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+  {% for p in pubs %}
+  <div class="col">
+    <div class="card h-100 shadow-sm border-0">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title fw-semibold">{{ p.title }}</h5>
+        <p class="card-text small text-muted mb-2">{{ p.authors }}</p>
+        <span class="badge text-bg-secondary align-self-start">{{ p.year }}</span>
+        <a href="{% url 'publications:detail' p.slug %}"
+           class="stretched-link" aria-label="View details"></a>
+      </div>
+    </div>
+  </div>
+  {% empty %}
+    <p>No publications.</p>
+  {% endfor %}
+</div>
+
+{# ===== ページネーション ===== #}
+{% if is_paginated %}
+<nav class="mt-5">
+  <ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo; Prev</a>
+      </li>
+    {% endif %}
+    <li class="page-item disabled">
+      <span class="page-link">Page {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</span>
+    </li>
+    {% if page_obj.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next &raquo;</a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
+{% endblock %}
