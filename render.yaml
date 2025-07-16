@@ -1,0 +1,22 @@
+# render.yaml (ルート直下)
+services:
+  - type: web
+    name: glins-website
+    runtime: python
+    region: oregon        # ☑️ Render UI で選び直しても可
+    branch: main
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+    startCommand: gunicorn glins_website.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: glins_website.settings.production
+      - key: SECRET_KEY            # 自動生成
+        generateValue: true
+      - key: ALLOWED_HOSTS
+        value: glins-website.onrender.com
+databases:
+  - name: glins-db
+    plan: free
+    region: oregon
