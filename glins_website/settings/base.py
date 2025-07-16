@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-ll(ii=1%0i_$-29@h0ee=k()s2_cnim46-7k&px_1j@amhx^wf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['glins-website.onrender.com']
 
 
 # Application definition
