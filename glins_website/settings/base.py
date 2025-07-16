@@ -14,6 +14,9 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+# 追加↓↓
+STATIC_ROOT = BASE_DIR / "staticfiles"   # ← collectstatic がここにコピーする
+STATIC_URL  = "/static/"                 # 既にあれば不要
 
 
 # Quick-start development settings - unsuitable for production
