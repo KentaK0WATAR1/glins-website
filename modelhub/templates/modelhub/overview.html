@@ -5,39 +5,75 @@
 {% block content %}
 <h2 class="mb-4">GLINS Model Overview</h2>
 
-<!-- 1. Concept -->
-<section class="mb-5">
-  <h3>What is GLINS?</h3>
-  <p>
-    The <strong>Global Logistics Intermordal Network Simulation (GLINS)</strong> model integrates
-    the worldwide maritime container network with regional hinterland
-    networks (road, rail, barge, etc.) by applying network-analysis techniques
-    commonly used in traffic engineering. It provides end-to-end simulations of
-    intermodal cargo flows under current or future economic and policy scenarios.
-  </p>
+<!-- ===== 2. How GLINS Works ★ ===== -->
+<section class="alt">
+  <div class="container">  
+    <h3 class="h4 fw-bold mb-3">How&nbsp;GLINS&nbsp;Works</h3>
+    <p class="mb-3">
+      The GLINS model simulates the movement of international maritime container cargo across 
+      an integrated network of maritime and land transport. Using real-world data on cargo demand, 
+      shipping services, ports, and hinterland networks, the model allocates cargo flows by 
+      considering both costs and congestion on each route.
+    </p>
+    <p class="mb-3">
+      At its core, GLINS represents the global maritime and land network, where each cargo 
+      chooses its mode and route probabilistically based on <strong>generalized cost</strong> 
+      (time + money). An iterative process accounts for network capacity and congestion effects, 
+      ensuring realistic results.
+    </p>
+    <p class="mb-0">
+      The model produces valuable outputs—such as cargo flows on each link, route costs, 
+      port throughput, and cargo utility—that help policymakers and practitioners evaluate 
+      and plan international logistics infrastructure and policies effectively.
+    </p>
+
+    <!-- ◀︎ Call-to-action -->
+    <div class="text-center mt-4">     {# ← 余白をつけつつ中央揃え #}
+      <a href="{% url 'modelhub:demo' %}"
+        class="btn btn-primary btn-lg fw-semibold px-4 shadow-sm mx-auto d-inline-block">
+        Run&nbsp;Quick&nbsp;Demo
+      </a>
+    </div>
+  </div>
 </section>
 
-<!-- n. Call to action -->
-<section class="text-center my-5">       <!-- ← mb-5 → my-5 に変更 -->
-  <a href="{% url 'modelhub:demo' %}" class="btn btn-primary btn-lg">
-    Launch the Interactive Demo
-  </a>
-</section>
+<!-- ===== 4. Methodology ===== -->
+<section class=" alt">
+  <div class="container">
+    <h3 class="h4 fw-bold mb-3">Framework</h3>
 
-<!-- 2. Methodology figure -->
-<section class="mb-5">
-  <h3>Methodology</h3>
-  <img src="{% static 'modelhub/img/model_structure.png' %}"
-       class="img-fluid rounded shadow mb-3"
-       alt="GLINS model structure">
-  <p class="text-muted small">
-    <em>Figure 1 – Overall framework (left) and the maritime network layer (right).</em>
-  </p>
+    <div class="row g-4">
+
+      <!-- 図①（やや小さめ） -->
+      <div class="col-md-5 text-center">
+        <figure class="d-inline-block w-100 rounded shadow-sm overflow-hidden">
+          <img src="{% static 'modelhub/img/glins_framework.png' %}"
+              class="img-fluid" alt="GLINS overall framework">
+          <figcaption class="figure-caption small mt-2">
+            <em>Overall GLINS framework.</em>
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- 図②（やや大きめ） -->
+      <div class="col-md-7 text-center">
+        <figure class="d-inline-block w-100 rounded shadow-sm overflow-hidden">
+          <img src="{% static 'modelhub/img/model_structure.png' %}"
+              class="img-fluid" alt="Maritime network layer">
+          <figcaption class="figure-caption small mt-2">
+            <em>Maritime-network layer.</em>
+          </figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <!-- 3. Geographic applications -->
-<section class="mb-5">
-  <h3>Geographic Applications</h3>
+<section class="alt">
+  <div class="container"> 
+  <h3 class="h4 fw-bold mb-3">Geographic Applications</h3>
   <p>The model has already been applied to:</p>
   <ul>
     <li>Central America (El Salvador and neighbouring countries)</li>
@@ -50,11 +86,13 @@
     Upcoming studies will expand to East Asia (China and Korea),
     Eastern Europe (incl. Ukraine) and South America.
   </p>
+  </div>
 </section>
 
 <!-- 4. Collaboration -->
-<section class="mb-5">
-  <h3>Collaboration &amp; Policy Interface</h3>
+<section class="alt">
+  <div class="container"> 
+  <h3 class="h4 fw-bold mb-3">Collaboration &amp; Policy Interface</h3>
   <p>
     GLINS outputs are provided to government and international agencies such as
     JICA, the Ministry of Land, Infrastructure, Transport and Tourism of Japan,
@@ -63,21 +101,25 @@
     Efficient handling of heterogeneous input data and model calibration with
     limited observed values are key challenges we continuously address.
   </p>
+  </div>
 </section>
 
 <!-- 5. Recent extensions -->
-<section class="mb-5">
-  <h3>Recent Extensions</h3>
+<section class="alt">
+  <div class="container"> 
+  <h3 class="h4 fw-bold mb-3">Recent Extensions</h3>
   <ul>
     <li>Endogenous optimisation of carrier service networks</li>
     <li>Inclusion of air-cargo networks and empty / foldable containers</li>
     <li>Integrated bulk-cargo module and dry-port representation</li>
   </ul>
+  </div>
 </section>
 
 <!-- 6. Example outputs -->
-<section class="mb-5">
-  <h3>Selected Model Outputs</h3>
+<section class="alt">
+  <div class="container"> 
+  <h3 class="h4 fw-bold mb-3">Selected Model Outputs</h3>
   <div class="row g-4">
     <div class="col-md-6">
       <img src="{% static 'modelhub/img/output_eurasia.png' %}"
@@ -94,11 +136,13 @@
       </p>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- 7. References -->
-<section class="mb-5">
-  <h3>Key References</h3>
+<section class="alt">
+  <div class="container"> 
+  <h3 class="h4 fw-bold mb-3">Key References</h3>
   <ul class="small">
     <li>Comprehensive book chapter on GLINS methodology (2020, English).</li>
     <li>Case study: Central America – <em>Maritime Economics &amp; Logistics</em> (IAME Martin Stopford Award, 2014).</li>
@@ -107,12 +151,13 @@
     <li>Case study: Eurasia – <em>ADBI book</em> (in prep.), Takeuchi Yoshio Logistics Award (2022).</li>
     <li>Further applications: Africa (<em>TR-IP</em>), Oceania, Arctic route, Japan.</li>
   </ul>
+  </div>
 </section>
 
 <!-- 8. Call to action -->
-<section class="text-center">
+<section class="text-center alt">
   <a href="{% url 'modelhub:demo' %}" class="btn btn-primary btn-lg">
-    Launch the Interactive Demo
+    Run&nbsp;Quick&nbsp;Demo
   </a>
 </section>
 {% endblock %}

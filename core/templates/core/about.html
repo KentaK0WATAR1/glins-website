@@ -5,45 +5,86 @@
 {% block content %}
 <h2 class="mb-4">About GLINS</h2>
 
-<!-- ===== Mission ===== -->
-<section class="mb-5">
-  <h3><span class="bi bi-bullseye me-1"></span> Mission</h3>
-  <p>
-    The <strong>Global Logistics Intermordal Network Simulation (GLINS)</strong> project
-    delivers high-resolution forecasts of global cargo flows and quantifies the
-    impact of policies on international shipping networks.
-  </p>
+  <!-- ===== Introduction ===== -->
+<section class="alt">
+  <div class="container"> 
+  <h3 class="h4 fw-bold mb-3">What&nbsp;is&nbsp;GLINS?</h3>
+    <p class="mb-3">
+      The <strong>GLINS (Global Logistics Intermodal Network Simulation)</strong> model was
+      developed to help policymakers and practitioners understand and evaluate
+      international logistics flows in an increasingly interconnected world. As
+      maritime container transport has globalized, it has become essential to
+      analyze not just shipping routes but also the wider hinterland networks that
+      connect ports to inland destinations.
+    </p>
+
+    <p class="mb-3">
+      Since its inception, GLINS has evolved through applications in diverse regions
+      and contexts, responding to specific policy needs and incorporating new
+      features along the way. Initially focused on maritime networks alone, it has
+      progressively expanded to include hinterland congestion, land freight, air
+      cargo, and even non-containerized cargo. It has also introduced multi-stage
+      allocation to better represent complex logistics decisions.
+    </p>
+
+    <p class="mb-3">
+      Over the past decade, GLINS has been applied in Central America, South and
+      Southeast Asia, Central and East Africa, Eurasia, Japan, the Pacific Islands,
+      and the Arctic region. These applications have addressed challenges such as
+      prioritizing infrastructure investments, evaluating policy options, optimizing
+      routes under capacity and congestion constraints, and assessing the viability
+      of new shipping routes like the Arctic sea route, where seasonal conditions
+      significantly affect costs and accessibility.
+    </p>
+
+    <p class="mb-3">
+      Today, GLINS provides a robust and practical framework for analyzing
+      international logistics flows—including emerging routes such as Arctic
+      shipping—and supporting evidence-based decisions. Its ongoing development
+      continues to reflect both the complexities of global trade and the practical
+      needs of the stakeholders who shape it.
+    </p>
+  </div>
 </section>
 
 <!-- ===== Research Domains ===== -->
-<section class="mb-5">
-  <h3><span class="bi bi-layers me-1"></span> Research Domains</h3>
-  <ul class="list-unstyled ps-3">
-    <li class="mb-2"><span class="bi bi-graph-up-arrow text-primary me-1"></span>
-        Trade-flow forecasting and scenario analysis</li>
-    <li class="mb-2"><span class="bi bi-cloud-drizzle text-primary me-1"></span>
-        Environmental regulation &amp; decarbonisation impacts</li>
-    <li><span class="bi bi-diagram-3 text-primary me-1"></span>
-        Optimisation of liner-service networks</li>
-  </ul>
+<section class="alt">
+  <div class="container">
+    <h3 class="h4 fw-bold mb-3">Research Domains</h3>
+
+    <div class="d-flex flex-wrap gap-2">
+      <span class="badge badge-tag rounded-pill">
+        Trade-flow forecasting
+      </span>
+      <span class="badge badge-tag rounded-pill">
+        Environmental regulation
+      </span>
+      <span class="badge badge-tag rounded-pill">
+        Global intermodal network modelling &amp; policy evaluation
+      </span>
+    </div>
+  </div>
 </section>
 
 <!-- ===== Model Framework ===== -->
-<section class="mb-5 text-center">
-  <h3 class="mb-3">
-    <a href="{% url 'modelhub:overview' %}" class="link-dark text-decoration-none">
-      <span class="bi bi-diagram-2 me-1"></span> Model&nbsp;Framework&nbsp;&raquo;
-    </a>
-  </h3>
+<section class="alt text-center">
+  <div class="container">
+  <h3 class="h4 fw-bold mb-3">Model&nbsp;Framework</h3>
 
-  <a href="{% url 'modelhub:overview' %}">
+  <!-- 画像もリンク化 -->
+  <a href="{% url 'modelhub:overview' %}"
+     class="d-inline-block rounded shadow-sm overflow-hidden">
     <img src="{% static 'core/img/model_structure.png' %}"
-         class="img-fluid rounded shadow mb-2"
-         alt="GLINS framework">
+         class="img-fluid" alt="GLINS framework">
+    <figcaption class="figure-caption small mt-2">
+      <em>Integration of global maritime and regional hinterland networks.</em>
+    </figcaption>
   </a>
+<!-- 
+  <p class="figure-caption small mt-2">
+    Integration of global maritime and regional hinterland networks.
+  </p> -->
 
-  <p class="small text-muted">
-    <em>Figure 1 – Integration of global maritime and regional hinterland networks.</em>
-  </p>
+  </div>
 </section>
 {% endblock %}

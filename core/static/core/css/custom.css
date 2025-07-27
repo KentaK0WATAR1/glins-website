@@ -1,0 +1,48 @@
+/* 下線がふわっと出るシンプルなリンク */
+.link-underline {
+  position: relative;
+  transition: color .15s ease-in-out;
+}
+
+/* 疑似要素で下線を描画　*/
+.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -2px;                /* テキスト直下 */
+  width: 100%; height: 2px;
+  background-color: currentColor;       /* テキスト色を継承 */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .2s ease-in-out;
+}
+
+/* hover / focus 時に下線を伸ばす */
+.link-underline:hover::after,
+.link-underline:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* アクセシブルなフォーカスリング */
+.link-underline:focus-visible {
+  outline: 2px solid var(--bs-primary);
+  outline-offset: 2px;
+}
+
+/* minimalist pill style for “Research Domains” */
+.badge-tag{
+  background-color:#f1f3f5;     /* わずかにグレー掛かった淡色 */
+  border:1px solid #dee2e6;     /* 薄い境界線で視認性アップ   */
+  color:#212529;                /* Bootstrap の text-body 相当 */
+  font-size:1rem;               /* .fs-6 と同じ → そのままでも可 */
+}
+
+/* 交互背景: section.alt が奇数なら薄グレー */
+section.alt:nth-of-type(odd) {
+  background: var(--bs-gray-100);   /* = #f8f9fa とほぼ同色 */
+}
+
+section.alt {
+  padding-top: 1rem;               
+  padding-bottom: 1rem;
+  margin-bottom: 0;                 /* 下余白は背景内に吸収 */
+}

@@ -5,19 +5,29 @@
 <h2 class="mb-4">Publications</h2>
 
 {# ===== 一覧（カード表示）===== #}
+
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
   {% for p in pubs %}
-  <div class="col">
-    <div class="card h-100 shadow-sm border-0">
-      <div class="card-body d-flex flex-column">
-        <h5 class="card-title fw-semibold">{{ p.title }}</h5>
-        <p class="card-text small text-muted mb-2">{{ p.authors }}</p>
-        <span class="badge text-bg-secondary align-self-start">{{ p.year }}</span>
-        <a href="{% url 'publications:detail' p.slug %}"
-           class="stretched-link" aria-label="View details"></a>
+    <div class="col">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title fw-semibold">{{ p.title }}</h5>
+          <p class="card-text small text-muted mb-2">{{ p.authors }}</p>
+          <span class="badge text-bg-secondary align-self-start">{{ p.year }}</span>
+
+          {# — 変更ポイント — #}
+          {% if p.doi %}
+            <a href="https://doi.org/{{ p.doi }}" target="_blank"
+               class="stretched-link" aria-label="Open DOI"></a>
+          {% elif p.pdf %}
+            <a href="{{ p.pdf }}" target="_blank"
+               class="stretched-link" aria-label="Open PDF"></a>
+          {% else %}
+            {# DOI も PDF も無い場合は詳細なし＝リンクなし #}
+          {% endif %}
+        </div>
       </div>
     </div>
-  </div>
   {% empty %}
     <p>No publications.</p>
   {% endfor %}

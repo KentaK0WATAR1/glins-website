@@ -20,12 +20,47 @@
       An open research initiative for forecasting cargo flows<br class="d-none d-md-inline">
       and evaluating smart maritime policies.
     </p>
-    <a href="{% url 'modelhub:demo' %}" class="btn btn-primary btn-lg shadow">
-      Run Quick&nbsp;Demo
-    </a>
+    <!-- ここを変更 -->
+    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+      <a href="{% url 'modelhub:overview' %}" class="btn btn-outline-light btn-lg shadow">
+        <strong>Model&nbsp;Overview</strong>
+      </a>
+      <a href="{% url 'modelhub:demo' %}" class="btn btn-outline-light btn-lg shadow">
+        <strong>Run&nbsp;Quick&nbsp;Demo</strong>
+      </a>
+
+    </div>
   </div>
 </header>
 
+<!-- ===== Mission (uniform text size) ===== -->
+<section class="container mb-5">
+  <div class="p-4 p-lg-5 bg-light rounded-3 shadow-sm">
+
+    <h2 class="h4 fw-bold mb-3">Mission</h2>
+
+    <p class="mb-3">
+      The <strong>GLINS (Global Logistics Intermodal Network Simulation)</strong> 
+      was developed to address the globalization of international maritime container 
+      transport and the need to comprehensively capture global flows. To support the 
+      evaluation of international logistics policies, including infrastructure development, 
+      GLINS emphasizes practical applicability over theoretical complexity, 
+      combining simplicity, reasonable accuracy, and the ability to incorporate policy variables.
+    </p>
+
+    <p class="mb-3">
+      It responds to the demand for prioritizing policies that span multiple countries 
+      and transport modes by integrating not only maritime networks but also hinterland 
+      networks—roads, railways, and inland waterways—into a comprehensive framework.
+    </p>
+
+    <p class="mb-0">
+      The model aims to <strong>reproduce the flows of international maritime container cargo 
+      on an intermodal logistics network</strong>, encompassing the global maritime transport 
+      network and the hinterland transport network of the target region.
+    </p>
+  </div>
+</section>
 <!-- ===== Latest Updates ===== -->
 <section class="container">
   <h2 class="mb-4 text-center text-md-start">Latest Updates</h2>
