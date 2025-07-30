@@ -2,7 +2,11 @@
 #!/usr/bin/env bash
 set -e
 
+# 1) DB Migration
 python manage.py migrate --noinput
+
+# 2) collectstatic
+python manage.py collectstatic --noinput
 
 # ── 1回だけ fixture を流す ────────────────────────────
 if [ ! -f .fixtures_loaded ]; then
