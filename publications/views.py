@@ -8,7 +8,7 @@ from .models import Publication
 
 
 
-# ---- 論文リスト ----
+## ---- 論文リスト ----
 # PUBS = [
 #     {
 #         "slug": "ghg-pricing-international-shipping",
@@ -529,18 +529,18 @@ class PublicationListView(ListView):
         )
 
 
-class PublicationDetailView(TemplateView):
-    # あなたのファイル名に合わせる
-    template_name = "publications/publication_detail.html"
+# class PublicationDetailView(TemplateView):
+#     # あなたのファイル名に合わせる
+#     template_name = "publications/publication_detail.html"
 
-    def get_context_data(self, **kwargs):
-        ctx  = super().get_context_data(**kwargs)
-        slug = self.kwargs["slug"]
+#     def get_context_data(self, **kwargs):
+#         ctx  = super().get_context_data(**kwargs)
+#         slug = self.kwargs["slug"]
 
-        # スラッグが一致する辞書を取り出す
-        try:
-            ctx["pub"] = next(p for p in PUBS if p["slug"] == slug)
-        except StopIteration:
-            raise Http404("Publication not found")
+#         # スラッグが一致する辞書を取り出す
+#         try:
+#             ctx["pub"] = next(p for p in PUBS if p["slug"] == slug)
+#         except StopIteration:
+#             raise Http404("Publication not found")
 
-        return ctx
+#         return ctx
