@@ -46,3 +46,9 @@ section.alt {
   padding-bottom: 1rem;
   margin-bottom: 0;                 /* 下余白は背景内に吸収 */
 }
+
+/* ---------- Badge in Research Domains ---------- */
+.badge-tag {
+  white-space: normal !important;       /* ← 改行を許可             */
+  word-break: break-word !important;    /* ← 長い単語も折り返す       */
+}
