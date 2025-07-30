@@ -709,5 +709,32 @@
     "content": "full abstract …",
     "pub_date": "2025-04-01"
   }
+},
+{
+  "model": "core.teammember",
+  "pk": 1,
+  "fields": {
+    "name": "Ryuichi Shibasaki",
+    "position": "Associate Professor",
+    "affiliation": "Shibasaki lab., Department of Systems Innovation, School of Engineering, The University of Tokyo"
+  }
+},
+{
+  "model": "core.teammember",
+  "pk": 2,
+  "fields": {
+    "name": "Trang Tran",
+    "position": "Project Researcher",
+    "affiliation": "Shibasaki lab., Department of Systems Innovation, School of Engineering, The University of Tokyo"
+  }
+},
+{
+  "model": "core.teammember",
+  "pk": 3,
+  "fields": {
+    "name": "Yuki Inoue",
+    "position": "Doctor Course Student",
+    "affiliation": "Shibasaki Lab., Department of Systems Innovation, School of Engineering, The University of Tokyo"
+  }
 }
 ]

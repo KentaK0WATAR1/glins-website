@@ -1,9 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import ListView, TemplateView
 from django.shortcuts import redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
 from news.models import News
+from .models import TeamMember
 # Create your views here.
 
 
@@ -37,3 +38,8 @@ class HomeView(TemplateView):
         ctx = super().get_context_data(**kwargs)
         ctx["latest_news"] = News.objects.all()[:3]  # newest 3
         return ctx
+    
+class TeamView(ListView):
+    model               = TeamMember
+    template_name       = "core/team.html"
+    context_object_name = "members"
