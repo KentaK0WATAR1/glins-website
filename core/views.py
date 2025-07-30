@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 from django.shortcuts import redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
+from news.models import News
 # Create your views here.
 
 
@@ -28,3 +29,11 @@ class PostLoginRedirectView(LoginRequiredMixin, View):
         if request.user.username.lower() == "demo":
             return redirect("modelhub:demo")
         return redirect("core:home")        # 好きなデフォルト先
+    
+class HomeView(TemplateView):
+    template_name = "core/home.html"
+
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        ctx["latest_news"] = News.objects.all()[:3]  # newest 3
+        return ctx

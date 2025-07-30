@@ -2,6 +2,8 @@
 from django.views.generic import TemplateView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import Http404
+from django.views.generic import ListView
+from .models import Publication
 
 
 
@@ -493,27 +495,38 @@ PUBS = [
 #     template_name       = "publications/publication_list.html"
 #     context_object_name = "pubs"
 #     paginate_by         = 12
-class PublicationListView(TemplateView):
-    template_name = "publications/publication_list.html"
-    paginate_by   = 12
+# class PublicationListView(TemplateView):
+#     template_name = "publications/publication_list.html"
+#     paginate_by   = 12
 
-    def get_context_data(self, **kwargs):
-        ctx = super().get_context_data(**kwargs)
+#     def get_context_data(self, **kwargs):
+#         ctx = super().get_context_data(**kwargs)
 
-        # 手動でページネート
-        paginator  = Paginator(PUBS, self.paginate_by)
-        page_num   = self.request.GET.get("page")
-        try:
-            page_obj = paginator.page(page_num)
-        except PageNotAnInteger:
-            page_obj = paginator.page(1)
-        except EmptyPage:
-            page_obj = paginator.page(paginator.num_pages)
+#         # 手動でページネート
+#         paginator  = Paginator(PUBS, self.paginate_by)
+#         page_num   = self.request.GET.get("page")
+#         try:
+#             page_obj = paginator.page(page_num)
+#         except PageNotAnInteger:
+#             page_obj = paginator.page(1)
+#         except EmptyPage:
+#             page_obj = paginator.page(paginator.num_pages)
 
-        ctx["pubs"]         = page_obj.object_list
-        ctx["page_obj"]     = page_obj
-        ctx["is_paginated"] = page_obj.has_other_pages()
-        return ctx
+#         ctx["pubs"]         = page_obj.object_list
+#         ctx["page_obj"]     = page_obj
+#         ctx["is_paginated"] = page_obj.has_other_pages()
+#         return ctx
+    
+class PublicationListView(ListView):
+    model               = Publication
+    template_name       = "publications/publication_list.html"
+    context_object_name = "pubs"
+    paginate_by         = 12        # そのまま
+
+    def get_queryset(self):
+        return super().get_queryset().only(
+            "title", "authors", "year", "doi"
+        )
 
 
 class PublicationDetailView(TemplateView):

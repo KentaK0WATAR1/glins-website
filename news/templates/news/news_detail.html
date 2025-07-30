@@ -1,0 +1,19 @@
+{% extends "core/base.html" %}
+{% block title %}{{ news.title }} – GLINS{% endblock %}
+
+{% block content %}
+<article class="mx-auto" style="max-width:720px">
+  <h1 class="h3 fw-bold mb-3">{{ news.title }}</h1>
+  <p class="text-muted small mb-4">{{ news.pub_date }}</p>
+
+  {{ news.content|linebreaks }}
+
+    <hr class="my-4">
+
+    <!-- ◀︎ Back link：薄いアウトラインボタン風に変更 -->
+    <a href="{% url 'news:list' %}"
+    class="btn btn-outline-secondary btn-sm d-inline-flex align-items-center gap-1 px-3">
+    &larr; <span>Back to&nbsp;News</span>
+    </a>
+</article>
+{% endblock %}

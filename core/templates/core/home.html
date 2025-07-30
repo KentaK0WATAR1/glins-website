@@ -64,31 +64,25 @@
 <!-- ===== Latest Updates ===== -->
 <section class="container">
   <h2 class="mb-4 text-center text-md-start">Latest Updates</h2>
+
   <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body">
-          <h5 class="card-title">sample: GLINS&nbsp;2.0 Scenario Library <span class="badge bg-info">Soon</span></h5>
-          <p class="card-text small">Expanded regional coverage and greener policy packages.</p>
+
+    {% for n in latest_news %}
+      <div class="col">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{ n.title }}</h5>
+            <p class="card-text small text-muted mb-2">{{ n.summary|truncatewords:15 }}</p>
+            <span class="badge bg-secondary align-self-start">{{ n.pub_date }}</span>
+            <a href="{% url 'news:detail' n.slug %}" class="stretched-link"
+               aria-label="Read full article"></a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body">
-          <h5 class="card-title">sample: Paper accepted at IAME&nbsp;2025</h5>
-          <p class="card-text small">“Carrier Network Optimisation inside an Intermodal Model.”</p>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body">
-          <h5 class="card-title">sample: Webinar: Decarbonisation Impacts</h5>
-          <p class="card-text small">Live on 12&nbsp;Aug&nbsp;2025 – registration opens next month.</p>
-        </div>
-      </div>
-    </div>
+    {% empty %}
+      <p class="text-muted">No updates yet.</p>
+    {% endfor %}
+
   </div>
 </section>
 

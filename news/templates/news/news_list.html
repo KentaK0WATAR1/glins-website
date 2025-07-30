@@ -1,0 +1,28 @@
+{% extends "core/base.html" %}
+{% block title %}News – GLINS{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">News &amp; Releases</h2>
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+  {% for n in news_list %}
+    <div class="col">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body d-flex flex-column">
+          <span class="badge bg-secondary align-self-start mb-2">{{ n.pub_date }}</span>
+          <h5 class="card-title fw-semibold">{{ n.title }}</h5>
+          <p class="card-text small text-muted mb-4">{{ n.summary|truncatewords:25 }}</p>
+          <a href="{% url 'news:detail' n.slug %}" class="stretched-link"
+             aria-label="Read full article"></a>
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <p>No news yet.</p>
+  {% endfor %}
+</div>
+
+{% if is_paginated %}
+  …（← publications と同じ pagination ブロックを流用）…
+{% endif %}
+{% endblock %}

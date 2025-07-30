@@ -8,4 +8,5 @@ urlpatterns = [
     path("publications/", include("publications.urls")),
     path("model/", include("modelhub.urls")), 
     path("accounts/", include("django.contrib.auth.urls")),  # login, logout, password reset
+    path("news/", include("news.urls", namespace="news")),
 ]
