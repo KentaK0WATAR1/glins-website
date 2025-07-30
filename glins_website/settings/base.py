@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "publications",
     "modelhub",
     "django_filters",
+    "widget_tweaks",
 ]
 
 
