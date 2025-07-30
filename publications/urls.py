@@ -1,6 +1,6 @@
 # publications/urls.py
 from django.urls import path
-from .views import PublicationListView, PublicationDetailView
+from publications.views import PublicationListView
 
 app_name = "publications"
 
